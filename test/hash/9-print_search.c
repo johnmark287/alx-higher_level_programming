@@ -1,4 +1,4 @@
-#include "hash.hpp"
+#include "hash.h"
 
 void print_search(HashTable *table, char *key)
 {

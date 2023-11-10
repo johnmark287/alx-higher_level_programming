@@ -1,4 +1,4 @@
-#include "hash.hpp"
+#include "hash.h"
 Ht_item *create_item(char *key, char *value)
 {
     // create a pointer to a new HashTable item

@@ -1,4 +1,4 @@
-#include "hash.hpp"
+#include "hash.h"
 
 LinkedList **create_overflow_buckets(HashTable *table)
 {

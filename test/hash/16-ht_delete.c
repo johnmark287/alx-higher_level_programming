@@ -1,4 +1,4 @@
-#include "hash.hpp"
+#include "hash.h"
 
 void ht_delete(HashTable *table, char *key)
 {
@@ -63,11 +63,18 @@ void ht_delete(HashTable *table, char *key)
                         return;
                     }
                     else
-                    [
+                    {
                         // This is somewhere in the chain.
-                        
-                    ]
+                        prev->next = curr->next;
+                        curr->next = NULL;
+                        free_linkedlist(curr);
+                        table->overflow_buckets[index] = head;
+                        return;
+                    }
                 }
+
+                curr = curr->next;
+                prev = curr;
             }
         }
     }

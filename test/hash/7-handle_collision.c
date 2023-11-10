@@ -1,4 +1,4 @@
-#include "hash.hpp"
+#include "hash.h"
 
 void handle_collision(HashTable *table, unsigned long index, Ht_item *item)
 {

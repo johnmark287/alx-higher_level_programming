@@ -1,8 +1,8 @@
-#include "hash.hpp"
+#include "hash.h"
 
 void print_table(HashTable *table)
 {
-    printf("\nHash Table\n---------------\n");
+    printf("\nHash Table\n------------------\n");
 
     for (int i = 0; i < table->size; i++)
     {
@@ -10,5 +10,5 @@ void print_table(HashTable *table)
             printf("Index: %d, Key: %s, Value: %s\n", i, table->items[i]->key, table->items[i]->value);
     }
 
-    printf("---------------\n\n");
+    printf("--------------------\n\n");
 }

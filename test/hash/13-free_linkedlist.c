@@ -1,4 +1,4 @@
-#include "hash.hpp"
+#include "hash.h"
 
 void free_linkedlist(LinkedList *list)
 {
@@ -8,6 +8,7 @@ void free_linkedlist(LinkedList *list)
     {
         temp = list;
         list = list->next;
+        
         free(temp->item->key);
         free(temp->item->value);
         free(temp->item);

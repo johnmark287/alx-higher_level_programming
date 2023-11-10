@@ -1,5 +1,4 @@
-#define CAPACITY 50000 // hash table size
-#include "hash.hpp"
+#include "hash.h"
 
 unsigned long hash_function(char *str)
 {

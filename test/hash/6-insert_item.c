@@ -1,4 +1,4 @@
-#include "hash.hpp"
+#include "hash.h"
 
 void ht_insert(HashTable *table, char *key, char *value)
 {
@@ -20,24 +20,24 @@ void ht_insert(HashTable *table, char *key, char *value)
             free_item(item);
             return;
         }
-        else
-        {
-            // Scenario 1: Update the value if already exist.
-            if (strcmp(current_item->key, key) == 0)
-            {
-                strcpy(table->items[index]->value, value);
-                return;
-            }
-            else
-            {
-                // Scenario 2: Handle the collision.
-                handle_collision(table, index, item);
-                return;
-            }
-        }
 
         // Insert directly.
         table->items[index] = item;
         table->count++;
+    }
+    else
+    {
+        // Scenario 1: Update the value if already exist.
+        if (strcmp(current_item->key, key) == 0)
+        {
+            strcpy(table->items[index]->value, value);
+            return;
+        }
+        else
+        {
+            // Scenario 2: Handle the collision.
+            handle_collision(table, index, item);
+            return;
+        }
     }
 }

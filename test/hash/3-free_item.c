@@ -1,4 +1,4 @@
-#include "hash.hpp"
+#include "hash.h"
 
 void free_item(Ht_item *item)
 {

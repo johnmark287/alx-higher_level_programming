@@ -1,4 +1,4 @@
-#include "hash.hpp"
+#include "hash.h"
 
 LinkedList *linkelist_insert(LinkedList *list, Ht_item *item)
 {
@@ -9,6 +9,7 @@ LinkedList *linkelist_insert(LinkedList *list, Ht_item *item)
         head->item = item;
         head->next = NULL;
         list = head;
+
         return (list);
     }
     else if (!(list->next))
@@ -17,6 +18,7 @@ LinkedList *linkelist_insert(LinkedList *list, Ht_item *item)
         node->item = item;
         node->next = NULL;
         list->next = node;
+
         return (list);
     }
     LinkedList *temp = list;
@@ -28,5 +30,6 @@ LinkedList *linkelist_insert(LinkedList *list, Ht_item *item)
     node->item = item;
     node->next = NULL;
     temp->next = node;
+    
     return(list);
 }

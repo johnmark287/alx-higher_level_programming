@@ -1,4 +1,4 @@
-#include "hash.hpp"
+#include "hash.h"
 
 Ht_item *linkedlist_remove(LinkedList *list)
 {

@@ -1,4 +1,4 @@
-#include "hash.hpp"
+#include "hash.h"
 
 void free_overflow_buckets(HashTable *table)
 {

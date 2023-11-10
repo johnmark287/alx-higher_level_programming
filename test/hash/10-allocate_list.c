@@ -1,4 +1,4 @@
-#include "hash.hpp"
+#include "hash.h"
 
 LinkedList *allocate_list()
 {
