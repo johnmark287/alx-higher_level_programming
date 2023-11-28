@@ -9,15 +9,15 @@
  */
 size_t print_listint(const listint_t *h)
 {
-  const listint_t *current;
+  const listint_t *current_node;
   unsigned int n; /* number of nodes */
 
-  current = h;
+  current_node = h;
   n = 0;
-  while (current != NULL)
+  while (current_node)
     {
-      printf("%i\n", current->n);
-      current = current->next;
+      printf("%i\n", current_node->n);
+      current_node = current_node->next;
       n++;
     }
 
@@ -33,24 +33,24 @@ size_t print_listint(const listint_t *h)
 listint_t *add_nodeint_end(listint_t **head, const int n)
 {
   listint_t *new;
-  listint_t *current;
+  listint_t *current_node;
 
-  current = *head;
+  current_node = *head;
 
   new = malloc(sizeof(listint_t));
-  if (new == NULL)
+  if (!new)
     return (NULL);
 
   new->n = n;
   new->next = NULL;
 
-  if (*head == NULL)
+  if (!(*head))
     *head = new;
   else
     {
-      while (current->next != NULL)
-	current = current->next;
-      current->next = new;
+      while (current_node->next != NULL)
+	current_node = current_node->next;
+      current_node->next = new;
     }
 
   return (new);
@@ -63,12 +63,12 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
  */
 void free_listint(listint_t *head)
 {
-  listint_t *current;
+  listint_t *current_node;
 
-  while (head != NULL)
+  while (head)
     {
-      current = head;
+      current_node = head;
       head = head->next;
-      free(current);
+      free(current_node);
     }
 }
