@@ -1,26 +1,37 @@
 #!/usr/bin/python3
-a = "Python is cool"
-print(a[7:-3])
+def err(s):
+    match s:
+        case 400:
+            return "Bad request"
+        case 404:
+            return "Not found"
+        case 418:
+            return "Not a teapot"
+        case 401 | 403 | 402:
+            return "Not allowed"
+        case _:
+            return "sth wrong with net"
+        
+print(err(500))
 
-print("""
-Usage: thingy [OPTIONS]
-		-h                        Display this usage message
-		-H hostname               Hostname to connect to
-""")
+class Point:
+	def __init__(self, x, y):
+		self.x = x
+		self.y = y
 
+def where_is(point):
+	match point:
+		case Point(x = 0, y = 0):
+			print("Origin")
+		case Point(x = 0, y = y):
+			print(f"Y = {y}")
+		case Point(x = x, y = 0):
+			print(f"X = {x}")
+		case Point():
+			print("Somewhere else")
+		case _:
+			print("Not a point")
 
-for n in range(2, 10):
+point = Point(2, 0)
 
-	for x in range(2, n):
-
-		if n % x == 0:
-
-			print(n, 'equals', x, '*', n//x)
-
-			break
-
-	else:
-
-		# loop fell through without finding a factor
-
-		print(n, 'is a prime number')
+where_is(point)
