@@ -1,4 +1,4 @@
-
+#!/usr/bin
 print("Sammy has {} balloons.".format(5))
 print("Sammy the {1} has a pet {0}!".format("shark", "pilot fish"))
 print("Sammy the {pr} {1} a {0}.".format("shark", "made", pr="pull request"))
